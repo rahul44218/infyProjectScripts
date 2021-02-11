@@ -1,0 +1,64 @@
+(1) For Offices
+
+create table Offices (officeCode varchar(10), city varchar(50), phone varchar(50), addressLine1 varchar(50),
+addressLine2 varchar(50), state varchar(50),country varchar(50), postalCode varchar(15), territory varchar(10),
+primary key(officeCode)
+)
+
+(2) For Employees
+
+create table Employees (employeeNumber INT Auto_Increment, lastName varchar(50),firstName varchar(50),
+extension varchar(10), email varchar(100), officeCode varchar(10), reportsTo INT, jobTitle varchar(50), 
+primary key(employeeNumber),
+FOREIGN KEY (officeCode) REFERENCES Offices(officeCode))
+
+(3) For Customers 
+
+ create table Customers (customerNumber INT Auto_Increment, customerName varchar(50), contactLastName varchar(50),
+ contactFirstName varchar(50), phone varchar(50), addressLine1 varchar(50), addressLine2 varchar(50),city varchar(50),
+ state varchar(50), postalCode varchar(15), country varchar(50), salesRepEmloyeeNumber INT,
+ primary key(customerNumber),
+ Foreign Key(salesRepEmloyeeNumber) references Employees(employeeNumber))
+ 
+ (4) For Payments
+ 
+ create table Payments (customerNumber INT , checkNumber varchar(50) , paymentDate DateTime,amount double, 
+ foreign key(customerNumber) references Customers(customerNumber),
+ primary key(customerNumber,checkNumber))
+ 
+ (5) For Orders
+ 
+ create table Orders (orderNumber int, orderDate datetime, requiredDate datetime, shippedDate datetime,
+ status varchar(15),comments text, customerNumber int,
+ primary key(orderNumber),
+ foreign key (customerNumber) references Customers(customerNumber))
+ 
+ (6) For ProductLines
+ 
+ create table ProductLines (productLine varchar(50), textDescription Text, htmlDescription Text, image blob,
+ primary key(productLine))
+ 
+ 
+(7) For Products
+
+ create table Products (productCode varchar(15), productName varchar(70), productLine varchar(50),
+ productScale varchar(10), productVendor varchar(50),productDescription text, quantityInStock int,
+ buyPrice double, MSRP double,
+ primary key(productCode),
+ foreign key(productLine) references ProductLines(productLine) )
+ 
+ 
+ (8) For OrderDetails
+ 
+ create table OrderDetails (orderNumber int, productCode varchar(15),quantityOrdered int,
+ priceEach double, orderLineNumber smallint,
+ primary key(orderNumber,productCode),
+ foreign key(orderNumber) references Orders(orderNumber),
+ foreign key(productCode) references Products(productCode))
+ 
+ 
+ Note:
+ Database name: project
+ To view table Schema use: desc table_name
+ To drop a table use: drop table table_name
+ 
