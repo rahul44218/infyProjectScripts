@@ -1,0 +1,57 @@
+(1) For Offices
+
+insert into offices (officeCode, city,phone, addressLine1,addressLine2,state,country,postalCode,territory) 
+values("OF101","Dhanbad","7004844218","plot ABC","house no. 23","Jharkhand","India","828205","phase1")
+
+(2) For Employees
+
+insert into employees values(101,"Kumar","Akash","ABC","kumar.akash@project.com","OF101",10,"Salesman")
+
+(3) For Customers 
+
+insert into customers values(10001,"Rahul Singhal", "Singhal","Rahul","8130259079","Plat xyz","House 14","Dhanbad",
+"Jharkhand","828205","India",101)
+insert into customers values(10002,"Rakshita Manoj", "Manoj","Rakshita","8130259079","Plat xyz","House 14","Dhanbad",
+"Jharkhand","828205","India",101)
+insert into customers values(10003,"Nikhil Harkanth", "Harkanth","Nikhil","8130259079","Plat xyz","House 14","Dhanbad",
+"Jharkhand","828205","India",101)
+insert into customers values(10004,"Rahul Singh", "Singhal","Rahul","7004844218","Plat xyz","House 14","Dhanbad",
+"Jharkhand","828205","India",101)
+
+ (4) For Payments
+ 
+insert into payments values(10001,"SINGHAL1","2021-02-12 15:30:00",265.02)
+insert into payments values(10001,"SINGHAL2","2021-02-12 15:30:00",270.02)
+insert into payments values(10004,"SINGH1","2021-02-12 15:30:00",2708.02)
+insert into payments values(10004,"SINGH2","2021-02-12",2718.02)
+
+ (5) For Orders
+ 
+ insert into orders values(101,"2021-02-12 15:30:00","2021-02-12 15:30:00","2021-02-15 15:30:00",
+"dispatched","Emergency",10001)
+insert into orders values(102,"2021-02-10 15:30:00","2021-02-10 15:30:00","2021-02-14 15:30:00",
+"dispatched","Emergency",10001)
+insert into orders values(103,"2021-02-12 15:30:00","2021-02-12 15:30:00","2021-02-14 15:30:00",
+"dispatched","Emergency",10004)
+insert into orders values(104,"2021-02-10 15:30:00","2021-02-10 15:30:00","2021-02-14 15:30:00",
+"dispatched","Emergency",10001)
+
+ (6) For ProductLines
+ 
+ insert into productlines values ("L101","Shoes","ABC",null)
+insert into productlines values ("L102","Bags","ABCD",null)
+
+(7) For Products
+
+insert into products values("P1001","Adidas","L101","Small","Flipkart","Economical Shoes",100,264.03,300.03)
+insert into products values("P1002","Nike","L101","Small","Amazon","Premium Shoes",150,350.03,400.03)
+insert into products values("P1003","Caprese","L102","Small","Snapdeal","Premium Bags",10,2002.3,2500.03)
+insert into products values("P1004","Wildcraft","L102","Big","Amazon","Economical Bags",120,126.36,150.36)
+
+ (8) For OrderDetails
+ 
+ insert into orderdetails values(101,"P1001",1,264.03,1)
+insert into orderdetails values(101,"P1003",1,2002.3,1)
+insert into orderdetails values(103,"P1002",1,350.03,1)
+insert into orderdetails values(103,"P1004",1,126.36,1)
+
